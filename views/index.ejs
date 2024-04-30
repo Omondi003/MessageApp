@@ -13,9 +13,9 @@
     <p>Welcome to <%= title %></p>
 
 
-    <% messages.forEach((msg)=>{ %>
-      <div>
-         <p>User is <%= msg.user %></p>
+    <% messages.forEach((msg,index)=>{ %>
+      <div class="each" style="background-color: <%= index % 2 === 0 ? '#f0f0f0' : '#e0e0e0' %> ">
+          <p>User is <%= msg.user %></p>
          <p><%= msg.message %></p>
          <p><%= msg.added %></p>
       </div>

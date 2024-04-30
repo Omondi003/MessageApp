@@ -18,7 +18,12 @@ const messages=[
      user:'Michael',
      message: "Heloo mr michael",
      added: new Date()
-   }
+   },
+   {
+    user:'Kennedy',
+    message: "Heloo mr Kennedy",
+    added: new Date()
+  }
 ];
  
 /* GET home page. */

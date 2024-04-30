@@ -3,6 +3,7 @@ let express = require('express');
 let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
+const mongoose=require('mongoose');
 
 let indexRouter = require('./routes/index');
 let usersRouter = require('./routes/users');
@@ -23,6 +24,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/new', usersRouter);
 
+app.post('/new/submit', (req,res)=>{
+   res.redirect('/')
+})
+
 // catch 404 and forward to error handler
 app.use((req, res, next)=> {
   next(createError(404));
@@ -39,7 +44,17 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-// module.exports = app;
-app.listen(8000, ()=>{
-  console.log("App is running on port 8000")
-})
+//  THE APP WILL ONLY RUN IF THE DATABASE IS CONNECTED SUCCESSFULLY
+
+const dbURL = 'mongodb://localhost:27017/MessageAPP'
+mongoose.connect(dbURL)
+   .then(()=>{
+    console.log('Database connectes successfully')
+    app.listen(8000)
+   })
+    .catch(err=> console.log(err))
+
+// App listening ;
+// app.listen(8000, ()=>{
+//   console.log("App is running on port 8000")
+// })
