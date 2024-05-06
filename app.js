@@ -54,7 +54,4 @@ mongoose.connect(dbURL)
    })
     .catch(err=> console.log(err))
 
-// App listening ;
-// app.listen(8000, ()=>{
-//   console.log("App is running on port 8000")
-// })
+ 
