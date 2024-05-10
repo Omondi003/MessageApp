@@ -8,6 +8,9 @@ const mongoose=require('mongoose');
 let indexRouter = require('./routes/index');
 let usersRouter = require('./routes/users');
 
+// let indexRouter = require('.');
+
+
 const app = express();
 
 // view engine setup
@@ -24,9 +27,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/new', usersRouter);
 
-app.post('/new/submit', (req,res)=>{
-   res.redirect('/')
-})
+// app.use('/new/submit',usersRouter )
+
+// app.post('/new/submit', (req,res)=>{
+//    res.redirect('/')
+// })
 
 // catch 404 and forward to error handler
 app.use((req, res, next)=> {
