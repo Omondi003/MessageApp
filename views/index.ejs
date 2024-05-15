@@ -16,9 +16,9 @@
 
     <% messages.forEach((msg,index)=>{ %>
       <div class="each" style="background-color: <%= index % 2 === 0 ? '#f0f0f0' : '#e0e0e0' %> ">
-          <p>User is <%= msg.user %></p>
+          <p>User is <%= msg.name %></p>
          <p><%= msg.message %></p>
-         <p><%= msg.added %></p>
+         <p><%= msg.createdAt %></p>
       </div>
         
     <% }) %>
