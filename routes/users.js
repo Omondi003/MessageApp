@@ -23,7 +23,8 @@ router.post('/', async (req, res) => {
      // Save the new message to the database
      const savedMessage = await newMessage.save();
  
-     res.status(201).json(savedMessage); // Return the saved message as JSON
+    //  res.status(201).json(savedMessage); // Return the saved message as JSON
+     res.redirect('/')
   //  res.send("Hello ")
    } catch (error) {
      res.status(400).json({ message: error.message }); // Return error message if there's an issue
