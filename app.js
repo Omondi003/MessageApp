@@ -4,12 +4,12 @@ let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 const mongoose=require('mongoose');
-const Messages=require('./models/newMesage')
+
 
 let indexRouter = require('./routes/index');
 let usersRouter = require('./routes/users');
 
-// let indexRouter = require('.');
+
 
 
 const app = express();
@@ -54,9 +54,10 @@ app.use(function(err, req, res, next) {
 const dbURL = 'mongodb://localhost:27017/MessageAPP'
 mongoose.connect(dbURL)
    .then(()=>{
-    console.log('Database connectes successfully')
+    console.log('Database connects successfully')
     app.listen(8000)
    })
     .catch(err=> console.log(err))
 
+ 
  
